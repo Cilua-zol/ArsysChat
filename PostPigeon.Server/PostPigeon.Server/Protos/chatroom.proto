@@ -1,0 +1,46 @@
+﻿syntax = "proto3";
+
+option csharp_namespace = "PostPigeon.Server";
+
+import "google/protobuf/timestamp.proto";
+
+package chatroom;
+
+service Chatroom {
+  rpc Join (UserRequest) returns (JoinResponse);
+  rpc SendMessage (MessageRequest) returns (None);
+  rpc ReceiveMessage (None) returns (stream MessageReply);
+  rpc GetAllUsers (None) returns (UserList);
+}
+
+message None { }
+
+message MessageRequest {
+  string text = 1;
+  google.protobuf.Timestamp time = 2;
+  string sender = 3;
+}
+
+message MessageReply {
+  string text = 1;
+  google.protobuf.Timestamp time = 2;
+  string sender = 3;
+}
+
+message UserRequest {
+  string id = 1;
+  string name = 2;
+}
+
+message UserList {
+  repeated UserRequest users = 1;
+}
+
+message JoinResponse {
+  int32 error = 1;
+  string msg = 2;
+}
+
+message ReceiveMsgRequest {
+  string user = 1;
+}

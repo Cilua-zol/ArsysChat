@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "E9FSvv3+3AQcU72tvL9WTisdgMparFeXsTzCPdkZqR8=",
+  "Source": "PostPigeon.Server",
+  "BasePath": "_content/PostPigeon.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
